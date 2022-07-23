@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> litros por km</title>
+    <style type="text/css">
+        body{
+            background-color: #000;
+            color: #fff;
+        }
+        div#res{
+            position: absolute;
+            left: 170px;
+            top: 346px;
+        }
+        div#reskmlt{
+            position: absolute;
+            left: 170px;
+            top: 386px;
+        }
+        hgroup{
+            position: absolute;
+            top: 325px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Gasolina esta valendo?</h2>
+        <input type="text" id="preco">
+        <h2>Quanto de dinheiro voce tem?</h2>
+        <input type="text" id="dinheiro">
+        <h2>Quantos KM seu carro faz por litro?</h2>
+        <input type="text" id="kmlt"> </br></br>
+        <button onclick="verificar()"> verificar </button>
+        <hgroup id="legends">
+        <h3>Litros de Gasolina:</h3>
+        <h3>Seu automovel fará:</h3>
+        </hgroup>
+        <div id="res">xxxxx</div>
+        <div id="reskmlt">xxxxxx</div>
+    </div>
+        
+    <script>
+        let preco = 0;
+        let dinheiro = 0;
+        let litros = 0;
+        let kmlt = 0;
+        let kmplt
+        function verificar() {
+            dinheiro = document.getElementById('preco').value;
+            preco = document.getElementById('dinheiro').value;
+            kmlt = document.getElementById('kmlt').value;
+
+            litros =(preco/dinheiro);
+            document.getElementById('res').innerHTML = Math.round(litros);
+            kmplt = (litros * kmlt);
+            document.getElementById('reskmlt').innerHTML = Math.round(kmplt) + ('KM por litros');
+
+        }
+    </script>
+</body>
+</html>
